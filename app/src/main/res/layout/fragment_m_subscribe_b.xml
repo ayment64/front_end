@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_main_activity"
+    tools:context=".Fragments.User.Subscribe_b"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Job"
+        android:textColor="@color/white_text_color_strong" />
+
+    <EditText
+        android:id="@+id/T_E_Subscribe_b_Job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Job"
+        android:textColorHint="@color/white_text_color_strong" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Description"
+        android:textColor="@color/white_text_color_strong" />
+
+    <EditText
+        android:gravity="top"
+        android:id="@+id/T_E_Subscribe_b_Description"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:hint="@string/Descriptionn"
+        android:textColorHint="@color/white_text_color_strong" />
+    <Button
+        android:id="@+id/BU_Subscribe_b_Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/Button_blue_Strong"
+        android:text="@string/Subscribee"
+        android:textColor="@color/white_text_color_strong" />
+</LinearLayout>

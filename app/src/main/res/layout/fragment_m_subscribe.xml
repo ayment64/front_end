@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    tools:context=".Fragments.User.Subscribe">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:background="#55000000"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Username"
+            android:textColor="@color/white_text_color_strong" />
+
+        <EditText
+            android:textColor="@color/white_text_color_strong"
+            android:id="@+id/T_E_Subscribe_Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Username"
+            android:textColorHint="@color/white_text_color_strong" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Password"
+            android:textColor="@color/white_text_color_strong" />
+
+        <EditText
+            android:id="@+id/T_E_Subscribe_Password"
+            android:textColor="@color/white_text_color_strong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Password"
+            android:textColorHint="@color/white_text_color_strong" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Phone_Number"
+            android:textColor="@color/white_text_color_strong" />
+
+        <EditText
+            android:id="@+id/T_E_Subscribe_First_Name"
+            android:textColor="@color/white_text_color_strong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/First_Name"
+            android:textColorHint="@color/white_text_color_strong" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/First_Name"
+            android:textColor="@color/white_text_color_strong" />
+
+        <EditText
+            android:id="@+id/T_E_Subscribe_Last_Name"
+            android:layout_width="match_parent"
+            android:textColor="@color/white_text_color_strong"
+            android:layout_height="wrap_content"
+            android:hint="@string/Last_Name"
+            android:textColorHint="@color/white_text_color_strong" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Last_Name"
+            android:textColor="@color/white_text_color_strong" />
+
+        <EditText
+            android:textColor="@color/white_text_color_strong"
+            android:id="@+id/T_E_Subscribe_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Email"
+            android:textColorHint="@color/white_text_color_strong" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Phone_Number"
+            android:textColor="@color/white_text_color_strong" />
+
+        <EditText
+            android:inputType="number"
+            android:id="@+id/T_E_Subscribe_Phone_Number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Phone_Number"
+            android:textColor="@color/white_text_color_strong"
+            android:textColorHint="@color/white_text_color_strong" />
+        <Button
+            android:id="@+id/BU_Subscribe_Next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/Button_blue_Strong"
+            android:text="@string/Next"
+            android:textColor="@color/white_text_color_strong" />
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

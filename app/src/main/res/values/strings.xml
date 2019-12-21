@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Aamoomor</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="Log_in">Log in</string>
+    <string name="Subscribe">Subscribe now !!</string>
+    <string name="Email">Email</string>
+    <string name="Subscribee">Subscribe</string>
+    <string name="Phone_Number">Phone Number</string>
+    <string name="First_Name">First Name</string>
+    <string name="Last_Name">Last Name</string>
+    <string name="Next">Next</string>
+    <string name="Job">Job</string>
+    <string name="Description">Description</string>
+    <string name="Descriptionn">Tell us a bit about you ...</string>
+    <string name="Create_Account">Create Account</string>
+    <string name="Verfication_code" />
+    <string name="Profile">Profile</string>
+    <string name="Logout">Logout</string>
+    <string name="HomePage">Home Page</string>
+</resources>

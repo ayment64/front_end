@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    tools:context=".Fragments.User.Subscribe_c">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:background="#55000000"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Verfication_code"
+            android:textColor="@color/white_text_color_strong" />
+
+        <EditText
+            android:id="@+id/T_E_Subscribe_c_Verfication_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Verfication_code"
+            android:textColorHint="@color/white_text_color_strong" />
+
+        <Button
+            android:id="@+id/BU_Subscribe_c_Next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/Button_blue_Strong"
+            android:text="@string/Create_Account"
+            android:textColor="@color/white_text_color_strong" />
+
+    </LinearLayout>
+
+</LinearLayout>

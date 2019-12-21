@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    tools:context=".Fragments.User.Log_in">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:background="#55000000"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Username"
+            android:textColor="@color/white_text_color_strong" />
+
+        <EditText
+            android:id="@+id/T_E_Log_in_Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Username"
+            android:textColor="@color/white_text_color_strong"
+            android:textColorHint="@color/white_text_color_strong" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Password"
+            android:textColor="@color/white_text_color_strong" />
+
+        <EditText
+            android:textColor="@color/white_text_color_strong"
+            android:id="@+id/T_E_Log_in_Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/Password"
+            android:textColorHint="@color/white_text_color_strong" />
+
+        <Button
+            android:id="@+id/BU_Log_in_Next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/Button_blue_Strong"
+            android:text="@string/Log_in"
+            android:textColor="@color/white_text_color_strong" />
+
+        <TextView
+            android:id="@+id/T_V_Log_in_To_Subscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/Subscribe"
+            android:textColor="@color/white_text_color_strong" />
+    </LinearLayout>
+
+</LinearLayout>
