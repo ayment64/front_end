@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activitys.Home">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/home_page_receptor"></FrameLayout>
 <com.google.android.material.navigation.NavigationView
     android:layout_width="match_parent"
     android:layout_height="match_parent"

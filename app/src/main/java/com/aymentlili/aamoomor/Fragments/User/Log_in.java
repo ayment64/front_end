@@ -139,6 +139,9 @@ public class Log_in extends Fragment
                 m.u.First_name=Userobject.getString("FirstName");
                 m.u.Email=Userobject.getString("Email");
                 m.u.image=Userobject.getString("image");
+                m.u.Description=Userobject.getString("description");
+                m.u.Phone_Number=Userobject.getString("phone_number");
+                m.u.Job=Userobject.getString("job");
                 Intent i = new Intent(getContext(),Home.class);
                 i.putExtra("Username",m.u.Username);
                 Log.d("username // ",m.u.Username );
@@ -147,7 +150,9 @@ public class Log_in extends Fragment
                 i.putExtra("Name",m.u.Name);
                 i.putExtra("Email",m.u.Email);
                 i.putExtra("image",m.u.image);
-
+                i.putExtra("description",m.u.Description);
+                i.putExtra("phone_number",m.u.Phone_Number);
+                i.putExtra("job",m.u.Job);
                 startActivityForResult(i,1);
 
             }

@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activitys.Main2Activity"></activity>
+        <activity android:name=".Fragments.User.User_profile"></activity>
+        <activity android:name=".Activitys.Main2Activity" />
         <activity android:name=".Activitys.Home" />
         <activity android:name=".Fragments.User.Subscribe_b" />
         <activity android:name=".Fragments.User.Log_in" />

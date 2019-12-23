@@ -18,4 +18,5 @@
     <string name="Profile">Profile</string>
     <string name="Logout">Logout</string>
     <string name="HomePage">Home Page</string>
+    <string name="houses_User">My Estate</string>
 </resources>
