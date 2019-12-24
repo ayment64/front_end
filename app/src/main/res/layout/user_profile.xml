@@ -25,6 +25,7 @@
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:layout_width="250dp"
+            android:id="@+id/C_I_Image_Profile"
             android:layout_height="250dp"
             android:src="@drawable/man"
             app:civ_border_color="#3f51b5"
