@@ -23,21 +23,18 @@
             android:src="@drawable/background_profile"
             app:srcCompat="@drawable/background_profile" />
 
-        <com.mikhaellopez.circularimageview.CircularImageView
+        <ImageView
             android:layout_width="250dp"
             android:id="@+id/C_I_Image_Profile"
             android:layout_height="250dp"
             android:src="@drawable/man"
-            app:civ_border_color="#3f51b5"
-            app:civ_border_width="4dp"
-            app:civ_shadow="true"
-            app:civ_shadow_color="#3f51b5"
-            app:civ_shadow_radius="10"
+
             android:layout_below="@+id/header_cover_image"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="-130dp"
             android:elevation="5dp"
             android:scaleType="centerCrop"/>
+
 
         <RelativeLayout
             android:id="@+id/profile_layout"
@@ -48,13 +45,12 @@
             android:elevation="4dp"
             android:paddingBottom="24dp">
             <TextView
-                android:id="@+id/T_V_Profile_Username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="70dp"
                 android:text="@string/Username"
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -80,34 +76,47 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+
+            android:layout_margin="15dp"
             android:orientation="vertical">
             <TextView
                 android:textSize="18dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/First_Name"/>
+                android:text="@string/Username"
+                android:textStyle="bold"/>
+            <TextView
+                android:textSize="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/First_Name"
+                android:textStyle="bold"/>
             <TextView
                 android:textSize="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/Last_Name"/>
+                android:text="@string/Last_Name"
+                android:textStyle="bold"/>
             <TextView
                 android:textSize="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/Email"/>
+                android:text="@string/Email"
+                android:textStyle="bold"/>
             <TextView
+                android:textStyle="bold"
                 android:textSize="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/Phone_Number"/>
             <TextView
+                android:textStyle="bold"
                 android:textSize="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/Job"/>
             <TextView
+                android:textStyle="bold"
                 android:textSize="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -120,7 +129,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_weight="1"
+                android:layout_margin="15dp"
                 >
+                <TextView
+                    android:id="@+id/T_V_Profile_Username"
+                    android:textSize="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/Username"/>
                 <TextView
                     android:id="@+id/T_V_Profile_First_name"
                     android:textSize="18dp"

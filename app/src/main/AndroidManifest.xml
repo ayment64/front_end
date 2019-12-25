@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.aymentlili.aamoomor">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
@@ -17,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Fragments.User.User_profile"></activity>
+        <activity android:name=".Fragments.Estate.Home_page"></activity>
+        <activity android:name=".Fragments.User.User_profile" />
         <activity android:name=".Activitys.Home" />
         <activity android:name=".Fragments.User.Subscribe_b" />
         <activity android:name=".Fragments.User.Log_in" />

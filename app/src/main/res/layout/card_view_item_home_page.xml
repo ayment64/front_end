@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="210dp"
+    android:elevation="8dp"
+    android:layout_height="180dp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/Card_view_Item_House_Image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/kitchen"/>
+
+        <TextView
+            android:layout_marginTop="125dp"
+            android:id="@+id/Card_view_Item_adresse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#55000000"
+            />
+        <TextView
+            android:layout_marginTop="105dp"
+            android:id="@+id/Card_view_Item_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#55000000"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="30dp">
+        <ImageView
+            android:id="@+id/Card_view_Item_Type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/baseline_home_black_24dp"/>
+   
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/living_room" />
+        <TextView
+            android:id="@+id/Card_view_Item_Living_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="#000"
+            android:layout_marginHorizontal="1dp"
+            android:text="0"/>
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bed" />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/Card_view_Item_Bed_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginHorizontal="1dp"
+            android:text="0"/>
+        <ImageView
+            android:layout_width="33dp"
+            android:textColor="#000"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bathtub" />
+        <TextView
+            android:id="@+id/Card_view_Item_Bath_rooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="#000"
+
+            android:layout_marginHorizontal="1dp"
+            android:text="0"/>
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/kitchen" />
+        <TextView
+            android:id="@+id/Card_view_Item_Kitchen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:layout_marginHorizontal="1dp"
+            android:textSize="16dp"
+            android:text="0"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
