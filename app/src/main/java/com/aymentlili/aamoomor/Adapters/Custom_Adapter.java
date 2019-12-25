@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.aymentlili.aamoomor.Entitys.Estate;
 import com.aymentlili.aamoomor.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,11 +40,33 @@ public class Custom_Adapter
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_item_home_page, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_item_home_page, parent, false));
+
     }
 
     public void onBindViewHolder(ViewHolder viewHolder, int n) {
+        Estate estate = (Estate)this.ListOfItems.get(n);
+        viewHolder.bedrooms.setText((CharSequence)String.valueOf((int)estate.bedrooms));
+        TextView textView = viewHolder.adress;
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("  Adresse : ");
+        stringBuilder.append(estate.adress);
+        textView.setText((CharSequence)stringBuilder.toString());
+        TextView textView2 = viewHolder.name;
+        StringBuilder stringBuilder2 = new StringBuilder();
+        stringBuilder2.append("  Name :");
+        stringBuilder2.append(estate.name);
+        textView2.setText((CharSequence)stringBuilder2.toString());
+        viewHolder.kitchens.setText((CharSequence)String.valueOf((int)estate.kitchens));
+        viewHolder.bathrooms.setText((CharSequence)String.valueOf((int)estate.bathrooms));
+        viewHolder.livingrooms.setText((CharSequence)String.valueOf((int)estate.livingrooms));
+        Picasso picasso = Picasso.get();
+        StringBuilder stringBuilder3 = new StringBuilder();
+        stringBuilder3.append("http://192.168.43.80:3000/test/");
+        stringBuilder3.append(estate.image);
+        picasso.load(stringBuilder3.toString()).into(viewHolder.image_select);
+
+
 
     }
 
@@ -62,7 +85,7 @@ public class Custom_Adapter
 
         public ViewHolder(View view) {
             super(view);
-            this.type = view.findViewById(R.id.Card_view_Item_Type);
+
             this.adress =view.findViewById(R.id.Card_view_Item_adresse);
             this.name =view.findViewById(R.id.Card_view_Item_Name);
             this.bathrooms =view.findViewById(R.id.Card_view_Item_Bath_rooms);

@@ -19,4 +19,17 @@
     <string name="Logout">Logout</string>
     <string name="HomePage">Home Page</string>
     <string name="houses_User">My Estate</string>
+    <string name="Name">Name</string>
+    <string name="Adress">Adress</string>
+    <string name="Type">Type</string>
+    <string name="Owner">Owner</string>
+    <string name="Forr">For</string>
+    <string name="bedrooms">Bedrooms</string>
+    <string name="Livingrooms">Livingrooms</string>
+    <string name="Bathrooms">Bathrooms</string>
+    <string name="Kitchen">Kitchen</string>
+    <string name="Garden">Garden</string>
+    <string name="Pictrues">Pictures</string>
+    <string name="Prix">Price</string>
+    <string name="Post">Post</string>
 </resources>

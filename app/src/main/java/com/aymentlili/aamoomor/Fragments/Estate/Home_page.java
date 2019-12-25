@@ -18,7 +18,9 @@ import com.aymentlili.aamoomor.Activitys.MainActivity;
 import com.aymentlili.aamoomor.Adapters.Custom_Adapter;
 import com.aymentlili.aamoomor.Entitys.Estate;
 import com.aymentlili.aamoomor.Entitys.User;
+import com.aymentlili.aamoomor.Fragments.User.Log_in;
 import com.aymentlili.aamoomor.R;
+import com.aymentlili.aamoomor.Services.MyTouchListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,13 +50,40 @@ public class Home_page extends Fragment {
         this.InitList();
 
         riri =view.findViewById(R.id.Home_Page_Recycler_View);
-
+        HttpGetRequest request =new HttpGetRequest();
+        request.execute();
         while (ListOfItems.size() < 1) {
         }
-        Log.d("lista/", ListOfItems.toString());
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this.getContext(), 2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         riri.setLayoutManager((RecyclerView.LayoutManager)gridLayoutManager);
+        Home_page.adapter = new Custom_Adapter(Home_page.ListOfItems, getContext());
         riri.setAdapter(adapter);
+        riri.addOnItemTouchListener((RecyclerView.OnItemTouchListener)new MyTouchListener(this.getContext(), riri, new MyTouchListener.OnTouchActionListener(){
+
+            @Override
+            public void onClick(View view, int n) {
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append("");
+                stringBuilder.append(n);
+                Log.d((String)"position", (String)stringBuilder.toString());
+                Home home = (Home)Home_page.this.getActivity();
+                Log.d((String)"inside item click", (String)((Estate)Home_page.ListOfItems.get((int)n)).name);
+                home.addFragmentEstateProfile(ListOfItems.get(n));
+            }
+
+            @Override
+            public void onLeftSwipe(View view, int n) {
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append("");
+                stringBuilder.append(n);
+                Log.d((String)"position", (String)stringBuilder.toString());
+            }
+
+            @Override
+            public void onRightSwipe(View view, int n) {
+            }
+        }));
+
         return view;
     }
 
@@ -108,8 +137,7 @@ public class Home_page extends Fragment {
                 //Connect to our url
                 connection.connect();
                 //Create a new InputStreamReader
-                InputStreamReader streamReader = new
-                        InputStreamReader(connection.getInputStream());
+                InputStreamReader streamReader = new InputStreamReader(connection.getInputStream());
                 //Create a new buffered reader and String Builder
                 BufferedReader reader = new BufferedReader(streamReader);
                 StringBuilder stringBuilder = new StringBuilder();
@@ -140,6 +168,9 @@ public class Home_page extends Fragment {
             }
             return result;
         }
+
+
+
         protected void onPostExecute(String result){
             if (result != null)
             {

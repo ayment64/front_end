@@ -11,7 +11,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.aymentlili.aamoomor.Entitys.Estate;
 import com.aymentlili.aamoomor.Entitys.User;
+import com.aymentlili.aamoomor.Fragments.Estate.Add_Estate;
+import com.aymentlili.aamoomor.Fragments.Estate.Estate_profile;
+import com.aymentlili.aamoomor.Fragments.Estate.Home_page;
 import com.aymentlili.aamoomor.Fragments.User.Subscribe_c;
 import com.aymentlili.aamoomor.Fragments.User.User_profile;
 import com.aymentlili.aamoomor.R;
@@ -50,10 +54,33 @@ public class Home extends AppCompatActivity {
         Image_view = hView.findViewById(R.id.Navigation_Header_Image_Profile);
         Picasso.get().load("http://192.168.43.80:3000/test/"+u.image).transform(new CircleTransform()).into(Image_view);
 
-        addFragmentProfile();
+        addFragmentAddEsatate();
     }
     public void addFragmentProfile() {
         User_profile user_profile = new User_profile();
+        FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
+        fragmentTransaction.replace(R.id.home_page_receptor, user_profile);
+        fragmentTransaction.commit();
+    }
+    public void addFragmentHomePage() {
+        Home_page user_profile = new Home_page();
+        FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
+        fragmentTransaction.replace(R.id.home_page_receptor, user_profile);
+        fragmentTransaction.commit();
+    }
+    public void addFragmentEstateProfile(Estate e) {
+
+        Estate_profile user_profile = new Estate_profile(e);
+        FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
+        fragmentTransaction.replace(R.id.home_page_receptor, user_profile);
+        fragmentTransaction.commit();
+    }
+    public void addFragmentAddEsatate() {
+
+        Add_Estate user_profile = new Add_Estate();
         FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
         fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
         fragmentTransaction.replace(R.id.home_page_receptor, user_profile);

@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Fragments.Estate.Home_page"></activity>
+        <activity android:name=".Fragments.Estate.Add_Estate"></activity>
+        <activity android:name=".Fragments.Estate.Estate_profile" />
+        <activity android:name=".Fragments.Estate.Home_page" />
         <activity android:name=".Fragments.User.User_profile" />
         <activity android:name=".Activitys.Home" />
         <activity android:name=".Fragments.User.Subscribe_b" />

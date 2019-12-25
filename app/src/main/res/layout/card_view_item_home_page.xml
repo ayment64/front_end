@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="210dp"
+    android:orientation="vertical" android:layout_width="190dp"
     android:elevation="8dp"
     android:layout_height="180dp">
     <RelativeLayout
@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#55000000"
+            android:textColor="@color/white_text_color_strong"
             />
         <TextView
             android:layout_marginTop="105dp"
@@ -26,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#55000000"
+            android:textColor="@color/white_text_color_strong"
             />
 
     </RelativeLayout>
@@ -33,13 +35,10 @@
     <LinearLayout
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
-        android:gravity="center_vertical"
-        android:layout_height="30dp">
-        <ImageView
-            android:id="@+id/Card_view_Item_Type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/baseline_home_black_24dp"/>
+        android:gravity="center"
+        android:layout_height="30dp"
+        >
+
    
         <ImageView
             android:layout_width="37dp"
@@ -48,6 +47,7 @@
         <TextView
             android:id="@+id/Card_view_Item_Living_room"
             android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
             android:textSize="16dp"
             android:textColor="#000"
