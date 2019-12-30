@@ -1,11 +1,9 @@
 package com.aymentlili.aamoomor.Fragments.Estate;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,11 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.aymentlili.aamoomor.Activitys.Home;
-import com.aymentlili.aamoomor.Activitys.MainActivity;
 import com.aymentlili.aamoomor.Adapters.Custom_Adapter;
 import com.aymentlili.aamoomor.Entitys.Estate;
-import com.aymentlili.aamoomor.Entitys.User;
-import com.aymentlili.aamoomor.Fragments.User.Log_in;
 import com.aymentlili.aamoomor.R;
 import com.aymentlili.aamoomor.Services.MyTouchListener;
 
@@ -32,13 +27,12 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Home_page extends Fragment {
     public static ArrayList<Estate> ListOfItems;
     public static RecyclerView riri;
     public static RecyclerView.Adapter adapter;
-    private static final String base_url = "http://192.168.43.80:3000/Estates";
+    private static final String base_url = "http://10.0.2.2:3000/Estates";
     public static boolean check;
     public static String d;
     private void InitList() {
@@ -48,7 +42,6 @@ public class Home_page extends Fragment {
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = layoutInflater.inflate(R.layout.home_page, viewGroup, false);
         this.InitList();
-
         riri =view.findViewById(R.id.Home_Page_Recycler_View);
         HttpGetRequest request =new HttpGetRequest();
         request.execute();
@@ -100,6 +93,7 @@ public class Home_page extends Fragment {
         estate.type = jSONObject.getString("type");
         estate.forr = jSONObject.getString("forr");
         estate.prix = jSONObject.getString("prix");
+        estate.owner = jSONObject.getString("owner");
         Log.d((String)"toObject", (String)estate.adress);
         return estate;
     }

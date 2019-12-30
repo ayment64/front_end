@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="100dp"
+tools:context=".Fragments.Estate.Biding_Item">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/The_Bid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="40dp"
+            android:hint="@string/Biding" />
+
+        <ImageView
+            android:id="@+id/Estate_Profile_User_Image"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/man" />
+
+        <TextView
+            android:id="@+id/Estate_Profile_Username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="110dp"
+            android:layout_marginVertical="10dp"
+            android:inputType="number"
+            android:text="@string/Username"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+       <ImageView
+           android:id="@+id/Send"
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:layout_marginLeft="370dp"
+           android:layout_marginTop="45dp"
+           android:src="@drawable/senddd"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

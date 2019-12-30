@@ -13,7 +13,7 @@ import com.aymentlili.aamoomor.Fragments.User.Subscribe_b;
 import com.aymentlili.aamoomor.Fragments.User.Subscribe_c;
 import com.aymentlili.aamoomor.R;
 
-public class MainActivity extends AppCompatActivity {
+public class Start_Activity extends AppCompatActivity {
     public static User u;
 
     @Override

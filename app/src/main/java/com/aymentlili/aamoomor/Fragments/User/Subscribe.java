@@ -1,6 +1,5 @@
 package com.aymentlili.aamoomor.Fragments.User;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,7 +10,7 @@ import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
-import com.aymentlili.aamoomor.Activitys.MainActivity;
+import com.aymentlili.aamoomor.Activitys.Start_Activity;
 import com.aymentlili.aamoomor.Entitys.User;
 import com.aymentlili.aamoomor.R;
 
@@ -61,12 +60,12 @@ public class Subscribe
                     Subscribe.this.Email.setError( "Email can not be Empty ");
                 }
                 if (!isEmpty(Username) || !isEmpty(Password) || !isEmpty(Firstname) || !isEmpty(Name) || !isEmpty(PhoneNumber) || !isEmpty(Email)) {
-                    MainActivity mainActivity = (MainActivity)Subscribe.this.getActivity();
-                    mainActivity.u = new User(Username.getText().toString(), Password.getText().toString(), Firstname.getText().toString(), Name.getText().toString());
-                    mainActivity.u.Phone_Number = Subscribe.this.PhoneNumber.getText().toString();
-                    mainActivity.u.Email = Subscribe.this.Email.getText().toString();
-                    Log.d("Json State at Subscribe",mainActivity.u.toJSON());
-                    mainActivity.addFragmentSubscribe_b();
+                    Start_Activity startActivity = (Start_Activity)Subscribe.this.getActivity();
+                    startActivity.u = new User(Username.getText().toString(), Password.getText().toString(), Firstname.getText().toString(), Name.getText().toString());
+                    startActivity.u.Phone_Number = Subscribe.this.PhoneNumber.getText().toString();
+                    startActivity.u.Email = Subscribe.this.Email.getText().toString();
+                    Log.d("Json State at Subscribe", startActivity.u.toJSON());
+                    startActivity.addFragmentSubscribe_b();
                 }
             }
         });

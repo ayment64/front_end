@@ -32,4 +32,7 @@
     <string name="Pictrues">Pictures</string>
     <string name="Prix">Price</string>
     <string name="Post">Post</string>
+    <string name="Add_Pictures">  Add_Pictures  </string>
+    <string name="Prixx">Price in dt</string>
+    <string name="Biding">Place your bid here in dt</string>
 </resources>

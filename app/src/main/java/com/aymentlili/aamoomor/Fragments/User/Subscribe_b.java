@@ -1,6 +1,5 @@
 package com.aymentlili.aamoomor.Fragments.User;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
@@ -11,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.aymentlili.aamoomor.Activitys.MainActivity;
+import com.aymentlili.aamoomor.Activitys.Start_Activity;
 import com.aymentlili.aamoomor.R;
 
 public class Subscribe_b extends Fragment {
@@ -42,11 +41,11 @@ public class Subscribe_b extends Fragment {
 
               count++;
                 if (count > 1) {
-                    MainActivity mainActivity = (MainActivity)getActivity();
-                    mainActivity.u.setJob(Job.getText().toString());
-                    mainActivity.u.setDescription(Description.getText().toString());
-                    Log.d((String)"Json State at Email ", mainActivity.u.toJSON());
-                    mainActivity.addFragmentSubscribe_c();
+                    Start_Activity startActivity = (Start_Activity)getActivity();
+                    startActivity.u.setJob(Job.getText().toString());
+                    startActivity.u.setDescription(Description.getText().toString());
+                    Log.d((String)"Json State at Email ", startActivity.u.toJSON());
+                    startActivity.addFragmentSubscribe_c();
                 }
             }
         });

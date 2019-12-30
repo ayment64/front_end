@@ -153,8 +153,9 @@
 
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_width="113dp"
+                    android:layout_width="252dp"
                     android:layout_height="wrap_content"
 
                     android:layout_margin="15dp"
@@ -162,78 +163,73 @@
 
                     <EditText
                         android:id="@+id/Estate_Profile_Name"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:hint="@string/Name" />
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:hint="@string/Adress"
-                        
                         android:id="@+id/Estate_Profile_Adress"
-                        />
-
-                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:hint="@string/Type"
-                        
+
+                        android:hint="@string/Adress" />
+
+                    <EditText
                         android:id="@+id/Estate_Profile_Type"
-                        />
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
 
+                        android:hint="@string/Type" />
 
 
                     <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:hint="@string/Forr"
-                        
                         android:id="@+id/Estate_Profile_for"
-                        />
-
-                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:hint="@string/Livingrooms"
-                        
+
+                        android:hint="@string/Forr" />
+
+                    <EditText
                         android:id="@+id/Estate_Profile_Livingrooms"
-                        />
-
-                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:hint="@string/bedrooms"
-                        
+                        android:inputType="number"
+                        android:hint="@string/Livingrooms" />
+
+                    <EditText
                         android:id="@+id/Estate_Profile_bedrooms"
-                        />
-                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:hint="@string/Bathrooms"
-                        
-                        android:id="@+id/Estate_Profile_Bathrooms"
-                        />
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:hint="@string/Kitchen"
-                        
-                        android:id="@+id/Estate_Profile_Kitchen"
-                        />
+                        android:inputType="number"
+                        android:hint="@string/bedrooms" />
 
                     <EditText
+                        android:id="@+id/Estate_Profile_Bathrooms"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:hint="@string/Garden"
-                        
-                        android:id="@+id/Estate_Profile_Gardens" />
+                        android:inputType="number"
+                        android:hint="@string/Bathrooms" />
+
                     <EditText
+                        android:id="@+id/Estate_Profile_Kitchen"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:hint="@string/Prix"
-                        
-                        android:id="@+id/Estate_Profile_Prix" />
+                        android:inputType="number"
+                        android:hint="@string/Kitchen" />
+
+                    <EditText
+                        android:id="@+id/Estate_Profile_Gardens"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:inputType="number"
+                        android:hint="@string/Garden" />
+
+                    <EditText
+                        android:id="@+id/Estate_Profile_Prix"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:inputType="number"
+                        android:hint="@string/Prixx" />
 
 
                 </LinearLayout>
@@ -246,7 +242,7 @@
                 android:textSize="20dp"
                 android:text="@string/Pictrues"/>
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/Estate_Profile_Receptor"
+                android:id="@+id/Add_Estate_Receptor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <LinearLayout
@@ -260,7 +256,16 @@
                     android:textColor="@color/white_text_color_strong"
                     android:background="@color/colorAccent"
                     android:text="@string/Post"
+                    android:layout_margin="5dp"
                     android:id="@+id/add_estate_button"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white_text_color_strong"
+                    android:background="@color/colorAccent"
+                    android:text="@string/Add_Pictures"
+                    android:layout_margin="5dp"
+                    android:id="@+id/Add_Pictures"/>
             </LinearLayout>
         </LinearLayout>
 

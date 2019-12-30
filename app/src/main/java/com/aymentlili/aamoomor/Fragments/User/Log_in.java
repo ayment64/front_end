@@ -1,6 +1,5 @@
 package com.aymentlili.aamoomor.Fragments.User;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
@@ -15,7 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.aymentlili.aamoomor.Activitys.Home;
-import com.aymentlili.aamoomor.Activitys.MainActivity;
+import com.aymentlili.aamoomor.Activitys.Start_Activity;
 import com.aymentlili.aamoomor.Entitys.User;
 import com.aymentlili.aamoomor.R;
 
@@ -27,13 +26,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 
 public class Log_in extends Fragment
 {
-    private static final String base_url = "http://192.168.43.80:3000/Users/";
+    private static final String base_url = "http://10.0.2.2:3000/Users/";
     private static int responseCode;
     public static String s;
     public static String t;
@@ -70,7 +67,7 @@ public class Log_in extends Fragment
                   s = Username.getText().toString();
                   t = Password.getText().toString();
 
-                  MainActivity m = (MainActivity) getActivity();
+                  Start_Activity m = (Start_Activity) getActivity();
                     HttpGetRequest request =new HttpGetRequest();
                     request.execute();
 
@@ -83,7 +80,7 @@ public class Log_in extends Fragment
         this.sub.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View view) {
-                ((MainActivity)Log_in.this.getActivity()).addFragmentSubscribe();
+                ((Start_Activity)Log_in.this.getActivity()).addFragmentSubscribe();
             }
         });
         return view;
@@ -131,7 +128,7 @@ public class Log_in extends Fragment
                 JSONArray mJsonArray = new JSONArray(result);
                 JSONObject Userobject = mJsonArray.getJSONObject(0);
                 String Username = Userobject.getString("Username");
-                MainActivity m = (MainActivity) getActivity();
+                Start_Activity m = (Start_Activity) getActivity();
                 m.u = new User();
                 m.u.Username=Userobject.getString("Username");
                 m.u.Password=Userobject.getString("Password");

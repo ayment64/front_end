@@ -32,7 +32,7 @@ public class Custom_Adapter
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("");
         stringBuilder.append(this.ListOfItems.size());
-        Log.d((String)stringBuilder.toString(), (String)"///////////////Taille liste////////////");
+
         return this.ListOfItems.size();
     }
 
@@ -62,7 +62,7 @@ public class Custom_Adapter
         viewHolder.livingrooms.setText((CharSequence)String.valueOf((int)estate.livingrooms));
         Picasso picasso = Picasso.get();
         StringBuilder stringBuilder3 = new StringBuilder();
-        stringBuilder3.append("http://192.168.43.80:3000/test/");
+        stringBuilder3.append("http://10.0.2.2:3000/test/");
         stringBuilder3.append(estate.image);
         picasso.load(stringBuilder3.toString()).into(viewHolder.image_select);
 

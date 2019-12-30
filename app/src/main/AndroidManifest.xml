@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -14,16 +14,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Fragments.Estate.Add_Estate"></activity>
+        <activity android:name=".Fragments.Estate.Biding_Item"></activity>
+        <activity android:name=".Fragments.Estate.Add_Estate" />
         <activity android:name=".Fragments.Estate.Estate_profile" />
         <activity android:name=".Fragments.Estate.Home_page" />
         <activity android:name=".Fragments.User.User_profile" />
         <activity android:name=".Activitys.Home" />
         <activity android:name=".Fragments.User.Subscribe_b" />
         <activity android:name=".Fragments.User.Log_in" />
-        <activity android:name=".Activitys.MainActivity">
+        <activity android:name=".Activitys.Start_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

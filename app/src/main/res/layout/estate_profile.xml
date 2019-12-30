@@ -24,16 +24,16 @@
             app:srcCompat="@drawable/background_profile" />
 
         <ImageView
-            android:layout_width="250dp"
             android:id="@+id/Estate_Profile_Thumb_nail"
-            android:layout_height="250dp"
-            android:src="@drawable/man"
-
+            android:layout_width="229dp"
+            android:layout_height="222dp"
             android:layout_below="@+id/header_cover_image"
+
             android:layout_centerHorizontal="true"
             android:layout_marginTop="-130dp"
             android:elevation="5dp"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop"
+            android:src="@drawable/man" />
 
 
         <RelativeLayout
@@ -260,6 +260,16 @@
                 android:text="@string/Pictrues"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/Estate_Profile_Receptor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <FrameLayout
+                android:id="@+id/Estate_Profile_biding_Receptor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/Estate_Profile_Receptor_All_bidding"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

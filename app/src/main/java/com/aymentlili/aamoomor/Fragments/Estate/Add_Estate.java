@@ -1,13 +1,19 @@
 package com.aymentlili.aamoomor.Fragments.Estate;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -17,8 +23,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.aymentlili.aamoomor.Activitys.Home;
+import com.aymentlili.aamoomor.Adapters.Add_Estate_Adapter;
+import com.aymentlili.aamoomor.Adapters.Custom_Adapter;
 import com.aymentlili.aamoomor.Entitys.Estate;
 import com.aymentlili.aamoomor.Entitys.User;
 import com.aymentlili.aamoomor.R;
@@ -33,6 +42,8 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -42,11 +53,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.app.Activity.RESULT_OK;
+
 public class Add_Estate extends Fragment {
-    private static final String base_url = "http://192.168.43.80:3000/Estates";
+    private static final String base_url = "http://10.0.2.2:3000/Estates";
     private int responseCode;
+    public static RecyclerView riri;
+    public static RecyclerView.Adapter adapter;
     public static boolean check;
     public static Estate e = new Estate();
+    private static final int PICK_IMAGE_REQUEST = 1;
+    private static final int PICK_IMAGE_MULTIPLE = 2;
     ImageView image_select;
     EditText adress;
     EditText bathrooms;
@@ -59,9 +76,13 @@ public class Add_Estate extends Fragment {
     EditText Prix;
     EditText Forr;
     Button Post;
-    private static final int PICK_IMAGE_REQUEST = 1;
+    Button Add_photos;
+    public static ArrayList<Uri> ListOfItems;
+    String imageEncoded;
+    public static List<String> imagesEncodedList;
     public static Uri im;
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        ListOfItems = new ArrayList<>();
         View view = layoutInflater.inflate(R.layout.add__estate, viewGroup, false);
         this.adress =view.findViewById(R.id.Estate_Profile_Adress);
         this.name =view.findViewById(R.id.Estate_Profile_Name);
@@ -75,12 +96,24 @@ public class Add_Estate extends Fragment {
         this.Prix = view.findViewById(R.id.Estate_Profile_Prix);
         this.Forr = view.findViewById(R.id.Estate_Profile_for);
         this.Post = view.findViewById(R.id.add_estate_button);
+        this.Add_photos = view.findViewById(R.id.Add_Pictures);
+        Add_photos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showFileChooser();
+            }
+        });
+
         image_select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showFileChooser();
             }
         });
+
+        riri =view.findViewById(R.id.Add_Estate_Receptor);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        riri.setLayoutManager(gridLayoutManager);
         this.Post.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View view) {
@@ -109,7 +142,16 @@ public class Add_Estate extends Fragment {
         intent.putExtra("aspectY", 1);
         intent.putExtra("scale", true);
         intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        intent.setAction(Intent.ACTION_GET_CONTENT);
         this.startActivityForResult(intent, this.PICK_IMAGE_REQUEST);
+    }
+    private void showFileChooserMultiple() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,"Select Picture"), PICK_IMAGE_MULTIPLE);
     }
     public class HttpPostRequest extends AsyncTask<Void, Void, String> {
 
@@ -216,27 +258,77 @@ public class Add_Estate extends Fragment {
             }
         });
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(data!=null)
-        {
-            Uri uri = data.getData();
-            image_select.setImageURI(uri);
-           im = uri;
+        try {
+            Home h = (Home) getActivity();
+            // When an Image is picked
+            if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
+                    && null != data)
+            {
+                im = data.getData();
+                image_select.setImageURI(im);
+            }
+            if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
+                    && null != data) {
+                // Get the Image from data
 
-        }
-        switch(requestCode)
-        {
-            case PICK_IMAGE_REQUEST:
-                if(resultCode==1)
-                {
+                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                imagesEncodedList = new ArrayList<String>();
+                if(data.getData()!=null){
 
-                    Uri uri = data.getData();
-                    image_select.setImageURI(uri);
+                    Uri mImageUri=data.getData();
+                    ListOfItems.add(mImageUri);
+                    im = data.getData();
+                    image_select.setImageURI(im);
+                    // Get the cursor
+                    Cursor cursor = h.getContentResolver().query(mImageUri,
+                            filePathColumn, null, null, null);
+                    // Move to first row
+                    cursor.moveToFirst();
+
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    imageEncoded  = cursor.getString(columnIndex);
+                    cursor.close();
+
+                } else {
+                    if (data.getClipData() != null) {
+                        ClipData mClipData = data.getClipData();
+                        ArrayList<Uri> mArrayUri = new ArrayList<Uri>();
+                        for (int i = 0; i < mClipData.getItemCount(); i++) {
+
+                            ClipData.Item item = mClipData.getItemAt(i);
+                            Uri uri = item.getUri();
+                            mArrayUri.add(uri);
+                            ListOfItems.add(uri);
+                            // Get the cursor
+                            Cursor cursor = h.getContentResolver().query(uri, filePathColumn, null, null, null);
+                            // Move to first row
+                            cursor.moveToFirst();
+
+                            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                            imageEncoded  = cursor.getString(columnIndex);
+                            imagesEncodedList.add(imageEncoded);
+                            cursor.close();
+
+                        }
+
+                        image_select.setImageURI(ListOfItems.get(0));
+                        adapter = new Add_Estate_Adapter(ListOfItems, getContext());
+                        riri.setAdapter(adapter);
+                        Log.v("LOG_TAG", "Selected Images" + mArrayUri.size());
+                    }
                 }
-                break;
-
+            } else {
+                Toast.makeText(getContext(), "You haven't picked Image", Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
+            Log.d("error",e.getMessage());
         }
-    }
 
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }
