@@ -1,5 +1,6 @@
 package com.aymentlili.aamoomor.Fragments.User;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
@@ -17,6 +18,12 @@ import com.aymentlili.aamoomor.Activitys.Home;
 import com.aymentlili.aamoomor.Activitys.Start_Activity;
 import com.aymentlili.aamoomor.Entitys.User;
 import com.aymentlili.aamoomor.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,15 +47,29 @@ public class Log_in extends Fragment
     public TextView fp;
     public Button next;
     public TextView sub;
+    FirebaseAuth auth;
+   public static FirebaseUser firebaseUser;
 
+    FirebaseDatabase firebaseDatabase;
     private boolean isEmpty(EditText editText) {
+
         return editText.getText().toString().trim().length() == 0;
+
     }
 
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.check = false;
         View view = layoutInflater.inflate(R.layout.fragment_m_log_in, viewGroup, false);
+       auth = FirebaseAuth.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+       if(firebaseUser!=null)
+       {
+
+           GetUserbyEmail getUserbyEmail = new GetUserbyEmail();
+           getUserbyEmail.execute();
+       }
 
         this.Username =  view.findViewById(R.id.T_E_Log_in_Username);
         this.Password =  view.findViewById(R.id.T_E_Log_in_Password);
@@ -150,7 +171,15 @@ public class Log_in extends Fragment
                 i.putExtra("description",m.u.Description);
                 i.putExtra("phone_number",m.u.Phone_Number);
                 i.putExtra("job",m.u.Job);
-                startActivityForResult(i,1);
+                auth.signInWithEmailAndPassword(m.u.Email,m.u.Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            startActivityForResult(i,1);
+                        }
+                    }
+                });
+
 
             }
             catch(IOException | JSONException e){
@@ -172,4 +201,93 @@ public class Log_in extends Fragment
             super.onPostExecute(result);
 
         }
-    }    }
+    }
+    public class GetUserbyEmail extends AsyncTask<String, Void, String> {
+        public static final String REQUEST_METHOD = "GET";
+        public static final int READ_TIMEOUT = 15000;
+        public static final int CONNECTION_TIMEOUT = 15000;
+        @Override
+        protected String doInBackground(String... params){
+
+            String result;
+            String inputLine;
+            try {
+                //Create a URL object holding our url
+
+                URL myUrl = new URL(base_url +firebaseUser.getEmail());
+                //Create a connection
+                HttpURLConnection connection =(HttpURLConnection)
+                        myUrl.openConnection();
+                //Set methods and timeouts
+                connection.setRequestMethod(REQUEST_METHOD);
+                connection.setReadTimeout(READ_TIMEOUT);
+                connection.setConnectTimeout(CONNECTION_TIMEOUT);
+
+                //Connect to our url
+                connection.connect();
+                //Create a new InputStreamReader
+                InputStreamReader streamReader = new
+                        InputStreamReader(connection.getInputStream());
+                //Create a new buffered reader and String Builder
+                BufferedReader reader = new BufferedReader(streamReader);
+                StringBuilder stringBuilder = new StringBuilder();
+                //Check if the line we are reading is not null
+                while((inputLine = reader.readLine()) != null){
+                    stringBuilder.append(inputLine);
+                }
+                //Close our InputStream and Buffered reader
+                reader.close();
+                streamReader.close();
+                //Set our result equal to our stringBuilder
+                result = stringBuilder.toString();
+
+                Log.d("Result|||||||||",result);
+                JSONArray mJsonArray = new JSONArray(result);
+                JSONObject Userobject = mJsonArray.getJSONObject(0);
+                String Username = Userobject.getString("Username");
+                Start_Activity m = (Start_Activity) getActivity();
+                m.u = new User();
+                m.u.Username=Userobject.getString("Username");
+                m.u.Password=Userobject.getString("Password");
+                m.u.Name=Userobject.getString("Name");
+                m.u.First_name=Userobject.getString("FirstName");
+                m.u.Email=Userobject.getString("Email");
+                m.u.image=Userobject.getString("image");
+                m.u.Description=Userobject.getString("description");
+                m.u.Phone_Number=Userobject.getString("phone_number");
+                m.u.Job=Userobject.getString("job");
+                Intent i = new Intent(getContext(),Home.class);
+                i.putExtra("Username",m.u.Username);
+                Log.d("username // ",m.u.Username );
+                i.putExtra("Password",m.u.Password);
+                i.putExtra("First_name",m.u.First_name);
+                i.putExtra("Name",m.u.Name);
+                i.putExtra("Email",m.u.Email);
+                i.putExtra("image",m.u.image);
+                i.putExtra("description",m.u.Description);
+                i.putExtra("phone_number",m.u.Phone_Number);
+                i.putExtra("job",m.u.Job);
+                startActivityForResult(i,9);
+
+            }
+            catch(IOException | JSONException e){
+                e.printStackTrace();
+                result = null;
+            }
+            if (result != null)
+            {
+
+            }
+            return result;
+        }
+        protected void onPostExecute(String result){
+            if (result != null)
+            {
+                check = true;
+            }
+            Log.d("check state", ""+check);
+            super.onPostExecute(result);
+
+        }
+    }
+}

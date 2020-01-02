@@ -61,7 +61,7 @@ public class Home_page extends Fragment {
                 Log.d((String)"position", (String)stringBuilder.toString());
                 Home home = (Home)Home_page.this.getActivity();
                 Log.d((String)"inside item click", (String)((Estate)Home_page.ListOfItems.get((int)n)).name);
-                home.addFragmentEstateProfile(ListOfItems.get(n));
+                home.addFragmentAddEstateee(ListOfItems.get(n));
             }
 
             @Override

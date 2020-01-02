@@ -19,21 +19,24 @@ import com.aymentlili.aamoomor.Fragments.Estate.Add_Estate;
 import com.aymentlili.aamoomor.Fragments.Estate.Biddding_item_show;
 import com.aymentlili.aamoomor.Fragments.Estate.Biding_Item;
 import com.aymentlili.aamoomor.Fragments.Estate.Estate_profile;
+import com.aymentlili.aamoomor.Fragments.Estate.Estateee;
 import com.aymentlili.aamoomor.Fragments.Estate.Home_page;
-import com.aymentlili.aamoomor.Fragments.User.Subscribe_c;
+import com.aymentlili.aamoomor.Fragments.User.ProfileViewPager;
 import com.aymentlili.aamoomor.Fragments.User.User_profile;
 import com.aymentlili.aamoomor.R;
 import com.aymentlili.aamoomor.Services.CircleTransform;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 public class Home extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
     public static User u = new User();
-    private DrawerLayout L_Drawer;
+
     private TextView Usename;
     private ImageView Image_view;
     private NavigationView mainNavigationView;
+    public static FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +70,13 @@ public class Home extends AppCompatActivity implements
     }
     public void addFragmentProfile() {
         User_profile user_profile = new User_profile();
+        FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
+        fragmentTransaction.replace(R.id.home_page_receptor, user_profile);
+        fragmentTransaction.commit();
+    }
+    public void addFragmentProfileViewPager() {
+        ProfileViewPager user_profile = new ProfileViewPager();
         FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
         fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
         fragmentTransaction.replace(R.id.home_page_receptor, user_profile);
@@ -112,14 +122,20 @@ public class Home extends AppCompatActivity implements
         fragmentTransaction.commit();
     }
 
-
+    public void addFragmentAddEstateee(Estate e) {
+        Estateee user_profile = new Estateee(e);
+        FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
+        fragmentTransaction.replace(R.id.home_page_receptor, user_profile);
+        fragmentTransaction.commit();
+    }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
 
         if (id == R.id.Navigation_item_Profile)
         {
-            addFragmentProfile();
+            addFragmentProfileViewPager();
         }
         if (id == R.id.Navigation_item_Home_Page)
         {
@@ -127,7 +143,8 @@ public class Home extends AppCompatActivity implements
         }
         if (id == R.id.Navigation_item_Logout)
         {
-            Intent i = new Intent(this,Home.class);
+            firebaseAuth.getInstance().signOut();
+            Intent i = new Intent(this,Start_Activity.class);
             startActivity(i);
             finish();
         }

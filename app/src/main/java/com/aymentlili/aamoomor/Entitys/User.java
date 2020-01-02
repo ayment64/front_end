@@ -22,6 +22,7 @@ public class User {
     public String Phone_Number;
     public String Username;
     public String image;
+    public String fb_id;
 
     public User() {
     }

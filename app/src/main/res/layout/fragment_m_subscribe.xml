@@ -43,23 +43,25 @@
             android:layout_height="wrap_content"
             android:hint="@string/Password"
             android:textColorHint="@color/white_text_color_strong" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Phone_Number"
-            android:textColor="@color/white_text_color_strong" />
 
-        <EditText
-            android:id="@+id/T_E_Subscribe_First_Name"
-            android:textColor="@color/white_text_color_strong"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/First_Name"
-            android:textColorHint="@color/white_text_color_strong" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/First_Name"
+            android:textColor="@color/white_text_color_strong" />
+
+        <EditText
+            android:id="@+id/T_E_Subscribe_First_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/First_Name"
+            android:textColor="@color/white_text_color_strong"
+            android:textColorHint="@color/white_text_color_strong" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Last_Name"
             android:textColor="@color/white_text_color_strong" />
 
         <EditText
@@ -72,7 +74,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Last_Name"
+            android:text="@string/Email"
             android:textColor="@color/white_text_color_strong" />
 
         <EditText
@@ -80,6 +82,7 @@
             android:id="@+id/T_E_Subscribe_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
             android:hint="@string/Email"
             android:textColorHint="@color/white_text_color_strong" />
         <TextView

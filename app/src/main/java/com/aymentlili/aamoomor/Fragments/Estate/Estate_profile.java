@@ -95,10 +95,10 @@ public class Estate_profile extends Fragment {
         this.Forr.setText(e.forr);
         this.owner.setText(e.owner);
         riri =view.findViewById(R.id.Estate_Profile_Receptor_All_bidding);
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), VERTICAL, false);
         riri.setLayoutManager(layoutManager);
         riri.setHasFixedSize(true);
-
         Picasso.get().load("http://10.0.2.2:3000/test/" + e.image).into(image_select);
         Home h = (Home) getActivity();
         Log.d("1house_name",e.name);

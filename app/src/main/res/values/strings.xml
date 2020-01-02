@@ -35,4 +35,6 @@
     <string name="Add_Pictures">  Add_Pictures  </string>
     <string name="Prixx">Price in dt</string>
     <string name="Biding">Place your bid here in dt</string>
+    <string name="State">State</string>
+    <string name="msg">Type your message here ...</string>
 </resources>

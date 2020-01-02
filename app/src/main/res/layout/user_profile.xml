@@ -124,55 +124,62 @@
 
 
         </LinearLayout>
+
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="283dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
                 android:layout_margin="15dp"
-                >
+                android:layout_weight="1"
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/T_V_Profile_Username"
-                    android:textSize="18dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/Username"/>
+                    android:text="@string/Username"
+                    android:textSize="18dp" />
+
                 <TextView
                     android:id="@+id/T_V_Profile_First_name"
-                    android:textSize="18dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/First_Name"/>
+                    android:text="@string/First_Name"
+                    android:textSize="18dp" />
+
                 <TextView
                     android:id="@+id/T_V_Profile_Last_name"
-                    android:textSize="18dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/Last_Name"/>
+                    android:text="@string/Last_Name"
+                    android:textSize="18dp" />
+
                 <TextView
                     android:id="@+id/T_V_Profile_Email"
-                    android:textSize="18dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/Email"/>
+                    android:text="@string/Email"
+                    android:textSize="18dp" />
+
                 <TextView
                     android:id="@+id/T_V_Profile_Phone_Number"
-                    android:textSize="18dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/Phone_Number"/>
+                    android:text="@string/Phone_Number"
+                    android:textSize="18dp" />
+
                 <TextView
                     android:id="@+id/T_V_Profile_Job"
-                    android:textSize="18dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/Job"/>
+                    android:text="@string/Job"
+                    android:textSize="18dp" />
+
                 <TextView
                     android:id="@+id/T_V_Profile_Desccription"
-                    android:textSize="18dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/Description"/>
+                    android:text="@string/Description"
+                    android:textSize="18dp" />
             </LinearLayout>
 
 
