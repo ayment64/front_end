@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    tools:context=".Fragments.Estate.Biding_Item">
+    tools:context=".Fragments.Home.Biding_Item">
 
     <RelativeLayout
         android:layout_width="match_parent"

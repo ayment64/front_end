@@ -4,13 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.aymentlili.aamoomor.Entitys.User;
-import com.aymentlili.aamoomor.Fragments.User.Log_in;
-import com.aymentlili.aamoomor.Fragments.User.Subscribe;
-import com.aymentlili.aamoomor.Fragments.User.Subscribe_b;
-import com.aymentlili.aamoomor.Fragments.User.Subscribe_c;
+import com.aymentlili.aamoomor.Fragments.start.Log_in;
+import com.aymentlili.aamoomor.Fragments.start.Subscribe;
+import com.aymentlili.aamoomor.Fragments.start.Subscribe_b;
+import com.aymentlili.aamoomor.Fragments.start.Subscribe_c;
 import com.aymentlili.aamoomor.R;
 
 public class Start_Activity extends AppCompatActivity {

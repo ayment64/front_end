@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    tools:context=".Fragments.User.Log_in">
+    tools:context=".Fragments.start.Log_in">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,12 +18,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Username"
+            android:textSize="24dp"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/white_text_color_strong" />
 
         <EditText
             android:id="@+id/T_E_Log_in_Username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+
             android:hint="@string/Username"
             android:textColor="@color/white_text_color_strong"
             android:textColorHint="@color/white_text_color_strong" />
@@ -32,6 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Password"
+            android:textSize="24dp"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/white_text_color_strong" />
 
         <EditText
@@ -41,6 +47,8 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="@string/Password"
+
+            android:layout_marginHorizontal="10dp"
             android:textColorHint="@color/white_text_color_strong" />
 
         <Button

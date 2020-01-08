@@ -1,4 +1,4 @@
-package com.aymentlili.aamoomor.Fragments.User;
+package com.aymentlili.aamoomor.Fragments.start;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -174,6 +174,7 @@ public class Log_in extends Fragment
                 auth.signInWithEmailAndPassword(m.u.Email,m.u.Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.d("ggggggg","gggggggggggggggg");
                         if(task.isSuccessful()){
                             startActivityForResult(i,1);
                         }

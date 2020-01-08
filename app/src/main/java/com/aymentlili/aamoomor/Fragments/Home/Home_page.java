@@ -1,4 +1,4 @@
-package com.aymentlili.aamoomor.Fragments.Estate;
+package com.aymentlili.aamoomor.Fragments.Home;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -51,16 +51,14 @@ public class Home_page extends Fragment {
         riri.setLayoutManager((RecyclerView.LayoutManager)gridLayoutManager);
         Home_page.adapter = new Custom_Adapter(Home_page.ListOfItems, getContext());
         riri.setAdapter(adapter);
-        riri.addOnItemTouchListener((RecyclerView.OnItemTouchListener)new MyTouchListener(this.getContext(), riri, new MyTouchListener.OnTouchActionListener(){
+        riri.addOnItemTouchListener(new MyTouchListener(this.getContext(), riri, new MyTouchListener.OnTouchActionListener(){
 
             @Override
             public void onClick(View view, int n) {
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append("");
                 stringBuilder.append(n);
-                Log.d((String)"position", (String)stringBuilder.toString());
-                Home home = (Home)Home_page.this.getActivity();
-                Log.d((String)"inside item click", (String)((Estate)Home_page.ListOfItems.get((int)n)).name);
+                Home home = (Home) getActivity();
                 home.addFragmentAddEstateee(ListOfItems.get(n));
             }
 
@@ -69,7 +67,7 @@ public class Home_page extends Fragment {
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append("");
                 stringBuilder.append(n);
-                Log.d((String)"position", (String)stringBuilder.toString());
+                Log.d("position", stringBuilder.toString());
             }
 
             @Override

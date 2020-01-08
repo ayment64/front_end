@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:padding="8dp"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/man"
+        android:id="@+id/buble_pic_him"
+       />
+    <TextView
+        android:id="@+id/message_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="this is a message bro"
+        android:layout_toRightOf="@+id/buble_pic_him"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:layout_marginHorizontal="6dp"
+        android:background="@drawable/background_left">
 
-</LinearLayout>
+    </TextView>
+
+
+</RelativeLayout>

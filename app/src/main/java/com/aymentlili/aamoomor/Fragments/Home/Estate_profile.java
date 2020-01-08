@@ -1,9 +1,7 @@
-package com.aymentlili.aamoomor.Fragments.Estate;
+package com.aymentlili.aamoomor.Fragments.Home;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,11 +17,9 @@ import android.widget.TextView;
 
 import com.aymentlili.aamoomor.Activitys.Home;
 import com.aymentlili.aamoomor.Adapters.Biding_Adapter;
-import com.aymentlili.aamoomor.Adapters.Custom_Adapter;
 import com.aymentlili.aamoomor.Entitys.Biding;
 import com.aymentlili.aamoomor.Entitys.Estate;
 import com.aymentlili.aamoomor.R;
-import com.aymentlili.aamoomor.Services.CircleTransform;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -109,10 +105,6 @@ public class Estate_profile extends Fragment {
         }else{
             HttpGetRequest request = new HttpGetRequest();
             request.execute();
-
-
-
-
         }
 
         return view;

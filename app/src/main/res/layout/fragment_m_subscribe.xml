@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    tools:context=".Fragments.User.Subscribe">
+    tools:context=".Fragments.start.Subscribe">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

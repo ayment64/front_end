@@ -1,36 +1,19 @@
-package com.aymentlili.aamoomor.Fragments.Estate;
+package com.aymentlili.aamoomor.Fragments.Home;
 
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.annotation.SuppressLint;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aymentlili.aamoomor.Activitys.Home;
-import com.aymentlili.aamoomor.Entitys.User;
 import com.aymentlili.aamoomor.R;
 import com.aymentlili.aamoomor.Services.CircleTransform;
 import com.squareup.picasso.Picasso;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class Biddding_item_show extends Fragment {
     public ImageView UserImage;

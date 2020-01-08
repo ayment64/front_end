@@ -33,7 +33,7 @@ public class Users_Adapter extends RecyclerView.Adapter<Users_Adapter.ViewHolder
     public int getItemCount() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("");
-        stringBuilder.append(this.ListOfItems.size());
+        stringBuilder.append(ListOfItems.size());
 
         return this.ListOfItems.size();
     }

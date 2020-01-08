@@ -1,4 +1,4 @@
-package com.aymentlili.aamoomor.Fragments.User;
+package com.aymentlili.aamoomor.Fragments.start;
 
 import android.os.Bundle;
 import android.util.Log;

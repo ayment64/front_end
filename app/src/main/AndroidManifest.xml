@@ -18,14 +18,14 @@
         android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Fragments.Estate.Biding_Item"></activity>
-        <activity android:name=".Fragments.Estate.Add_Estate" />
-        <activity android:name=".Fragments.Estate.Estate_profile" />
-        <activity android:name=".Fragments.Estate.Home_page" />
-        <activity android:name=".Fragments.User.User_profile" />
+        <activity android:name=".Fragments.Home.Biding_Item"></activity>
+        <activity android:name=".Fragments.Home.Add_Estate" />
+        <activity android:name=".Fragments.Home.Estate_profile" />
+        <activity android:name=".Fragments.Home.Home_page" />
+        <activity android:name=".Fragments.Home.User_profile" />
         <activity android:name=".Activitys.Home" />
-        <activity android:name=".Fragments.User.Subscribe_b" />
-        <activity android:name=".Fragments.User.Log_in" />
+        <activity android:name=".Fragments.start.Subscribe_b" />
+        <activity android:name=".Fragments.start.Log_in" />
         <activity android:name=".Activitys.Start_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

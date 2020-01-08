@@ -1,4 +1,4 @@
-package com.aymentlili.aamoomor.Fragments.User;
+package com.aymentlili.aamoomor.Fragments.Home;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;

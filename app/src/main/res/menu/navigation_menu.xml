@@ -2,11 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/Navigation_item_Home_Page"
         android:title="Home page"
-        android:icon="@mipmap/baseline_home_black_24dp"></item>
+        android:icon="@drawable/home"></item>
     <item android:id="@+id/Navigation_item_Profile"
         android:title="Profile"
-        android:icon="@mipmap/baseline_person_black_24dp"></item>
+        android:icon="@drawable/user_icon"></item>
+    <item android:id="@+id/Navigation_item_Add_Estate"
+        android:title="Add Estate"
+        android:icon="@drawable/add_icon"></item>
+    <item android:id="@+id/Navigation_item_Users"
+        android:title="Users"
+        android:icon="@drawable/users_icon"></item>
     <item android:id="@+id/Navigation_item_Logout"
         android:title="Logout"
-        android:icon="@mipmap/logoutt"></item>
+        android:icon="@drawable/logout"></item>
 </menu>

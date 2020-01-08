@@ -1,4 +1,4 @@
-package com.aymentlili.aamoomor.Fragments.User;
+package com.aymentlili.aamoomor.Fragments.Home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +12,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.aymentlili.aamoomor.Fragments.Home.User_profile;
+import com.aymentlili.aamoomor.Fragments.Home.Users;
 import com.aymentlili.aamoomor.R;
 import com.google.android.material.tabs.TabLayout;
 

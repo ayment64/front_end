@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/background_main_activity"
-    tools:context=".Fragments.User.Subscribe_b"
+    tools:context=".Fragments.start.Subscribe_b"
     android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"

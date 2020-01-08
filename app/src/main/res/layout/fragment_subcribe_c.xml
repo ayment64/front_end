@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    tools:context=".Fragments.User.Subscribe_c">
+    tools:context=".Fragments.start.Subscribe_c">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,7 +1,6 @@
-package com.aymentlili.aamoomor.Fragments.Estate;
+package com.aymentlili.aamoomor.Fragments.Home;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,7 +26,6 @@ import android.widget.Toast;
 
 import com.aymentlili.aamoomor.Activitys.Home;
 import com.aymentlili.aamoomor.Adapters.Add_Estate_Adapter;
-import com.aymentlili.aamoomor.Adapters.Custom_Adapter;
 import com.aymentlili.aamoomor.Entitys.Estate;
 import com.aymentlili.aamoomor.Entitys.User;
 import com.aymentlili.aamoomor.R;

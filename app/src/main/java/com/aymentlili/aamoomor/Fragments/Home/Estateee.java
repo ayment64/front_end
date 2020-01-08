@@ -1,4 +1,4 @@
-package com.aymentlili.aamoomor.Fragments.Estate;
+package com.aymentlili.aamoomor.Fragments.Home;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +15,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.aymentlili.aamoomor.Activitys.Home;
 import com.aymentlili.aamoomor.Entitys.Estate;
-import com.aymentlili.aamoomor.Fragments.User.Chats;
 import com.aymentlili.aamoomor.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -38,8 +37,8 @@ public class Estateee extends Fragment {
         View_Pager_Adapter viewPagerAdapter = new View_Pager_Adapter(getChildFragmentManager(),BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         Estate_profile estate_profile = new Estate_profile(e);
         Log.d("Estate clicked",estate_profile.e.name);
-        viewPagerAdapter.addFragment(estate_profile,"The_estate" );
-        viewPagerAdapter.addFragment(new Chats(e.owner),"Chats" );
+        viewPagerAdapter.addFragment(estate_profile,e.name );
+        viewPagerAdapter.addFragment(new Chats(e.owner),e.owner );
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
         return view;

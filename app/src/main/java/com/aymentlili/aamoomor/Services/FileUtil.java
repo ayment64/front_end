@@ -22,8 +22,6 @@ import android.provider.OpenableColumns;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.aymentlili.aamoomor.Fragments.User.User_profile;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
